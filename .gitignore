@@ -1,0 +1,8 @@
+.venv/
+.idea/
+*.iml
+__pycache__/
+*.pyc
+Thumbs.db
+do_not_push_me.py
+*.log
