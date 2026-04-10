@@ -4,5 +4,5 @@
 __pycache__/
 *.pyc
 Thumbs.db
-do_not_push_me.py
 *.log
+credentials.py
