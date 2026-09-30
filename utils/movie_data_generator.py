@@ -10,7 +10,7 @@ class MovieDataGenerator:
         return faker.catch_phrase()
     @staticmethod
     def generate_image_url():
-        return faker.image_url()
+        return "https://picsum.photos/200/300"
     @staticmethod
     def generate_price():
         return random.randint(100, 2000)
@@ -26,7 +26,7 @@ class MovieDataGenerator:
         return random.choice([True, False, True, True])
     @staticmethod
     def generate_genre_id():
-        return random.randint(1, 10)
+        return random.randint(5, 10)
 
     @staticmethod
     def generate_rating():
