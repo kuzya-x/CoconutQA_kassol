@@ -24,3 +24,4 @@ class TestReview:
 
         review_page.submit_review()
         expect(page.get_by_text("Отзыв успешно создан")).to_be_visible()
+        expect(page.get_by_text(review_text, exact=True)).to_be_visible()
