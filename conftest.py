@@ -51,7 +51,7 @@ def auth_session():
     }
     login_url = f"{AUTH_BASE_URL}{LOGIN_ENDPOINT}"
     response = session.post(login_url, json=login_data, headers=HEADERS)
-    assert response.status_code == 200, f"Ошибка авторизаци: {response.status_code}"
+    assert response.status_code == 201, f"Ошибка авторизаци: {response.status_code}"
 
     token = response.json().get("accessToken")
     assert token is not None, "Токен не получен"
