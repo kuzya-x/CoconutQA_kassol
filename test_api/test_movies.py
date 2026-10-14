@@ -148,7 +148,7 @@ class TestMoviesPositive:
             api_manager.movies_api.delete_movie(movie_check.id)
             assert db_helper.get_movie_by_id(movie_check.id) is None
 
-
+@allure.epic("Cinescope API")
 @allure.feature("Movies")
 @allure.tag("negative")
 @pytest.mark.api

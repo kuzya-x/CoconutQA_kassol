@@ -16,7 +16,7 @@ class MovieDBModel(Base):
     published = Column(Boolean)
     rating = Column(Float)
     genre_id = Column(Integer)
-    created_at = Column (DateTime)
+    created_at = Column(DateTime)
 
     def to_dict(self) -> Dict[str, Any]:
 
