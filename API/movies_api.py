@@ -7,21 +7,21 @@ class MoviesAPI(CustomRequester):
     def get_movies(self, params=None, expected_status=200):
         return self.send_request(
             method="GET",
-            endpoint="/movies",
+            endpoint="movies",
             params=params,
             expected_status=expected_status
         )
     def get_movie_by_id(self, movie_id, expected_status=200):
         return self.send_request(
             method="GET",
-            endpoint=f"/movies/{movie_id}",
+            endpoint=f"movies/{movie_id}",
             expected_status=expected_status
         )
 
     def create_movie(self, movie_data, expected_status=201):
         return self.send_request(
             method="POST",
-            endpoint="/movies",
+            endpoint="movies",
             data=movie_data,
             expected_status=expected_status
         )
@@ -29,7 +29,7 @@ class MoviesAPI(CustomRequester):
     def update_movie(self, movie_id, movie_data, expected_status=200):
         return self.send_request(
             method="PATCH",
-            endpoint=f"/movies/{movie_id}",
+            endpoint=f"movies/{movie_id}",
             data=movie_data,
             expected_status=expected_status
         )
@@ -37,6 +37,6 @@ class MoviesAPI(CustomRequester):
     def delete_movie(self, movie_id, expected_status=200):
         return self.send_request(
             method="DELETE",
-            endpoint=f"/movies/{movie_id}",
+            endpoint=f"movies/{movie_id}",
             expected_status=expected_status
         )

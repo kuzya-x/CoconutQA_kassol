@@ -26,3 +26,4 @@ class UserApi(CustomRequester):
             data=user_data,
             expected_status=expected_status
         )
+
