@@ -91,7 +91,7 @@ def super_admin(user_session):
     return super_admin
 
 @pytest.fixture
-def common_user(user_session, super_admin, creation_user_data):
+def common_user(user_session, super_admin, creation_user_data, db_helper):
     new_session = user_session()
 
     common_user = User(
@@ -101,7 +101,12 @@ def common_user(user_session, super_admin, creation_user_data):
         new_session)
     super_admin.api.user_api.create_user(creation_user_data)
     common_user.api.auth_api.authenticate(common_user.creds)
-    return common_user
+
+    yield common_user
+
+    user_in_db = db_helper.get_user_by_email(common_user.email)
+    if user_in_db:
+        db_helper.delete_user(user_in_db)
 
 
 @pytest.fixture

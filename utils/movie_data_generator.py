@@ -43,3 +43,7 @@ class MovieDataGenerator:
             "published": MovieDataGenerator.generate_published(),
             "genreId": MovieDataGenerator.generate_genre_id()
         }
+
+    @staticmethod
+    def generate_review_text() -> str:
+        return f"Автотест: отзыв {random.randint(1, 999999)}"

@@ -8,12 +8,9 @@ from playwright.sync_api import expect
 @pytest.mark.ui
 class TestLogin:
     @allure.title("Успешная авторизация пользователя")
-    def test_login_ui(self, login_page, page, common_user):
-        user = common_user
-        email = user.email
-        password = user.password
-        login_page.login(email, password)
-        expect(page.get_by_text("Что-то пошло не так")).to_be_visible()
-"""Страница после спешного логина выдаёт баннер 'Что-то пошло не так' после обновления выкидывает на главную уже с логином"""
-
+    @allure.description("После входа и обновления страницы в профиле виден email пользователя")
+    @pytest.mark.smoke
+    def test_login_ui(self, login_page, common_user):
+        login_page.login(common_user.email, common_user.password)
+        login_page.assert_logged_in_as(common_user.email)
     

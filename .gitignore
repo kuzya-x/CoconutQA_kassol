@@ -7,3 +7,4 @@ Thumbs.db
 *.log
 resources/credentials.py
 .env
+allure-results/
